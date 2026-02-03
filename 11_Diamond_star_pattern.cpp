@@ -4,42 +4,40 @@ int main()
 {
     int n;
     cin >> n;
-    for (int i = 1; i < +n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        // space
-        for (int j = 1; j <= n - 1; j++)
+        for (int j = 1; j <= n - i; j++)
         {
             cout << "  ";
         }
-        if (i % 2 != 0)
+        for (int j = 1; j <= i; j++)
         {
-            for (int j = 1; j <= n * 2 - 1; j++)
+            if (j % 2 != 0)
             {
-                if (j % 2 != 0)
-                {
-                    cout << "* ";
-                }
-                else
-                {
-                    cout << "  ";
-                }
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
             }
         }
-        else if (i % 2 == 0)
+
+        for (int j = i - 1; j >= 1; j--)
         {
-            for (int j = 1; j <= n * 2 - 1; j++)
+            if (j % 2 != 0)
             {
-                if (j % 2 == 0)
-                {
-                    cout << "* ";
-                }
-                else
-                {
-                    cout << "  ";
-                }
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
             }
         }
+        for (int j = 1; j <= n - i; j++)
+        {
+            cout << "  ";
+        }
+        cout << endl;
     }
-    cout << endl;
     return 0;
 }
